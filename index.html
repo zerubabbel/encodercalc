@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="This is a boilerplate for a Bootstrap 4.1.1 project">
+    <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+    <meta name="author" content="Henrik H. Boelsmand">
+    <title>DBD Shopping Calculator</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+
+    <!-- build:css -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- endbuild -->
+  </head>
+
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#"><img src="assets/img/logo.jpg" class="rounded" width="80" height="80" class="d-inline-block align-top" alt=""></a>
+
+           <!-- <a class="navbar-brand brand-name"><img height="80px" width="100px" src="assets/img/logo.jpg"></a>
+           <a class="navbar-brand" href=".">DesignerBags Depot</a> -->
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+
+           <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+             <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                 <a class="nav-link" href=".">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">Contact</a>
+               </li>
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                 <div class="dropdown-menu" aria-labelledby="dropdown01">
+                   <a class="dropdown-item" href="#">Action</a>
+                   <a class="dropdown-item" href="#">Another action</a>
+                   <a class="dropdown-item" href="#">Something else here</a>
+                 </div>
+               </li>
+             </ul>
+             <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+               <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+             </form>
+           </div>
+        </nav>
+
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-6" >
+              <div id="inputFieldsArea">
+                <div class="inputBlock number1">
+                  <strong>Item Price</strong>
+                  <div class="input-group mb-3 mr-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" class="form-control itemPrice" id="itemPrice" aria-label="Item Price">
+                    <div class="input-group-append mr-2">
+                      <span class="input-group-text rounded-right"></span>
+                    </div>
+                    <button class="btn-danger rounded remove"><i class="fa fa-trash"></i></button>
+                  </div> 
+                </div> 
+              </div><!--#inputFieldsArea-->
+
+              <div class="shippingBlock">
+                  <strong>Shipping Cost</strong>
+                  <div class="input-group mb-3 mr-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">₱</span>
+                    </div>
+                    <input type="number" class="form-control shippingCost" aria-label="Shipping Price">
+                    <div class="input-group-append mr-2">
+                      <span class="input-group-text rounded-right"></span>
+                    </div>
+                    <button class="btn-primary rounded"><i class="fas fa-truck"></i></button>
+                  </div> 
+                </div> 
+
+              <div>
+                <button class="btn btn-primary" id="addToListButton" type="submit">Add more items</button>
+              </div>
+              <br />
+              <br />
+              <div>
+                <button type="submit" id="calculateButton" class="btn btn-outline-primary btn-lg btn-block">Calculate Total<span class="glyphicon glyphicon-chevron-right"></span></button>
+              </div>
+              <br />
+              <br />
+            </div><!--col-md-6-->
+
+            <!--SECOND COLUMN STARTS-->
+            <div class="col-md-6">
+              
+              <div class="details-list">
+                <div class="mt-1 mb-3">
+                  <h1 class="text-center">Total Cost: ₱ <span class=totalCost> </span></h1>
+                  <hr style="width:85%"/>
+                </div>
+                <ul class="ml-1">
+                  <!--Dollar Entries-->
+                  <li><i class="far fa-dot-circle p-2"></i></i>Cost of items: $ <span class="itemsCost"> </span></li>
+                  <li><i class="far fa-dot-circle p-2"></i></i>Tax: $ <span class="tax"> </span></li>
+                  <li><i class="far fa-dot-circle p-2"></i></i>Cost of Items with Tax: $ <span class="costWithTax"> </span></li>
+                  <li><i class="far fa-dot-circle p-2"></i></i>Service Charge: $ <span class="serviceCharge"> </span></li>
+                  <li><i class="far fa-dot-circle p-2"></i></i>Subtotal $ <span class="subtotalDollar"> </span></li>
+                  <li><i class="far fa-dot-circle p-2"></i></i>Subtotal ₱ <span class="subtotalPeso"> </span></li>
+                  <li><i class="far fa-dot-circle p-2"></i></i>Shipping: ₱<span class="shipping"> </span></li>
+                </ul>
+              </div>
+            </div>
+            <br /><br />
+          </div><!--row-->
+
+        </div><!--container-->
+     <!-- Footer -->
+      <footer class="footer bg-dark">
+        <div class="container text-center">
+          <div class='demopadding'>
+            <div class='icon social fb' ><a class="socialIcon" href="https://www.facebook.com/designerbagdepotph/" target="_blank"><i class='fab fa-facebook-f'></i></a></div>
+            <div class='icon social in'><a class="socialIcon" href="https://www.instagram.com/designer_bags_depot/?hl=en" target="_blank"><i class='fab fa-instagram'></i></a></div>
+          </div>  
+
+        </div>
+      </footer>
+
+
+    <!-- build:js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/functions.js"></script>
+     <!-- endbuild -->
+  </body>
+
+</html>
