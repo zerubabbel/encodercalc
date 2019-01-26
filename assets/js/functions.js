@@ -34,6 +34,16 @@ $( document ).ready(function() {
       var subtotalDollar = sum + tax + serviceCharge;
       var subtotalPeso = subtotalDollar * 55;
   		var totalCost = ((sum + tax + serviceCharge) * 55) + shippingCost;
+
+      shippingCost = shippingCost.toFixed(2);
+      sum = sum.toFixed(2);
+      tax = tax.toFixed(2);
+      costWithTax = costWithTax.toFixed(2);
+      serviceCharge = serviceCharge.toFixed(2);
+      subtotalDollar = subtotalDollar.toFixed(2);
+      subtotalPeso = subtotalPeso.toFixed(2);
+      totalCost = totalCost.toFixed(2);
+
   		console.log(tax);
   		console.log(sum);
   		
