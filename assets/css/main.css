@@ -7753,8 +7753,9 @@ html {
 /*# sourceMappingURL=main.css.map */
 
 body { 
-    padding-top: 150px; 
-    padding-bottom: 50px;
+    padding-top: 130px; 
+    /*padding-bottom: 150px;*/
+    margin-bottom: 60px;
     /*padding-bottom: 70px;*/
     /*font-family: 'Source Sans Pro', sans-serif;*/
     font-family: 'Open Sans', sans-serif;
@@ -7763,25 +7764,37 @@ body {
 ol, ul {
   list-style: none;
 }
-
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  
+}
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  line-height: 160px; /* Vertically center the text there */
+  line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
+  text-align: center;
+
 }
 
-.demopadding {
-  margin:10px auto;
+
+/*.demopadding {
+  /*margin:6000px 100px 6000px 0 auto;*/
+ /* margin-left: 430px auto;
   width:90px;
   text-align:center;
-}
+}*/
 .icon {
   position:relative;
-  text-align:center;
+  /*text-align:center;*/
+  display: inline-block;
   width:0px;
   height:0px;
   padding:20px;
@@ -7801,8 +7814,8 @@ ol, ul {
   top:10px;
 }
 .icon.social {
-  float:left;
-  margin:0 5px 0 0;
+  float:none;
+  margin:7px 5px 0 7px;
   cursor:pointer;
   background:#6d6e71 ;
   color:#262626;
@@ -7824,7 +7837,7 @@ ol, ul {
   -o-filter:    drop-shadow(0 1px 10px rgba(0,0,0,.8));
   filter:       drop-shadow(0 1px 10px rgba(0,0,0,.8));   
 }
-.icon.social.fb i {
+/*.icon.social.fb i {
   left:13px;
   top:10px;
 }
@@ -7832,7 +7845,7 @@ ol, ul {
 .icon.social.in i {
   left:11px;
 }
-
+*/
 .socialIcon{
   color: white;
 }

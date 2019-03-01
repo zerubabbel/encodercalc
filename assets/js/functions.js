@@ -15,47 +15,51 @@ $( document ).ready(function() {
 
   $('#calculateButton').click(function(){
   		console.log('Hello');
-  		var sum = 0; 
-  		console.log(sum);
+      var shippingCost = parseFloat($('.shippingCost').val());
+      if(isNaN(shippingCost)){
+          alert ('You must enter a shipping cost');
+      } else {
+          var sum = 0; 
+        console.log(sum);
 
-  		// console.log($("#itemPrice").val());
+        // console.log($("#itemPrice").val());
 
-  		$('.itemPrice').each(function(){
-  			if($(this).val()){
-  				sum += parseFloat($(this).val());
-  			}
-  		});
+        $('.itemPrice').each(function(){
+          if($(this).val()){
+            sum += parseFloat($(this).val());
+          }
+        });
 
-  		var shippingCost = parseFloat($('.shippingCost').val());
-      sum = sum; 
-  		var tax = (sum * .10);
-      var costWithTax = sum + tax; 
-  		var serviceCharge = ((tax + sum) * .20);
-      var subtotalDollar = sum + tax + serviceCharge;
-      var subtotalPeso = subtotalDollar * 55;
-  		var totalCost = ((sum + tax + serviceCharge) * 55) + shippingCost;
+        
+        sum = sum; 
+        var tax = (sum * .10);
+        var costWithTax = sum + tax; 
+        var serviceCharge = ((tax + sum) * .20);
+        var subtotalDollar = sum + tax + serviceCharge;
+        var subtotalPeso = subtotalDollar * 55;
+        var totalCost = ((sum + tax + serviceCharge) * 55) + shippingCost;
 
-      shippingCost = shippingCost.toFixed(2);
-      sum = sum.toFixed(2);
-      tax = tax.toFixed(2);
-      costWithTax = costWithTax.toFixed(2);
-      serviceCharge = serviceCharge.toFixed(2);
-      subtotalDollar = subtotalDollar.toFixed(2);
-      subtotalPeso = subtotalPeso.toFixed(2);
-      totalCost = totalCost.toFixed(2);
+        shippingCost = shippingCost.toFixed(2);
+        sum = sum.toFixed(2);
+        tax = tax.toFixed(2);
+        costWithTax = costWithTax.toFixed(2);
+        serviceCharge = serviceCharge.toFixed(2);
+        subtotalDollar = subtotalDollar.toFixed(2);
+        subtotalPeso = subtotalPeso.toFixed(2);
+        totalCost = totalCost.toFixed(2);
 
-  		console.log(tax);
-  		console.log(sum);
-  		
-  		$('.itemsCost').html(sum);
-  		$('.tax').html(tax);
-      $('.costWithTax').html(costWithTax);
-  		$('.shipping').html(shippingCost);
-  		$('.serviceCharge').html(serviceCharge);
-      $('.subtotalDollar').html(subtotalDollar);
-      $('.subtotalPeso').html(subtotalPeso);
-  		$('.totalCost').html(totalCost);
-  		 
+        console.log(tax);
+        console.log(sum);
+        
+        $('.itemsCost').html(sum);
+        $('.tax').html(tax);
+        $('.costWithTax').html(costWithTax);
+        $('.shipping').html(shippingCost);
+        $('.serviceCharge').html(serviceCharge);
+        $('.subtotalDollar').html(subtotalDollar);
+        $('.subtotalPeso').html(subtotalPeso);
+        $('.totalCost').html(totalCost);
+      }
   		// $('input').find('#itemPrice').each(function(){
   		// 	var itemPriceCost = $(this).val();
   		// 	sum += itemPriceCost;
